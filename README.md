@@ -14,7 +14,7 @@ Slack app that acts as a connector for Kibana - Development / Deployment Instruc
 Before you can run the app, you'll need to store some environment variables from the app you just created
 
 1. Open up [env.example](./env.example)
-2. Go to your Slack apps configuration page, click *OAuth & Permissions* in the left hand menu, then copy the Bot User OAuth Token (starts with xoxb-). You will store this as `SLACK_BOT_TOKEN`.
+2. Go to your Slack apps configuration page [link](https://api.slack.com/apps), click *OAuth & Permissions* in the left hand menu, then copy the Bot User OAuth Token (starts with xoxb-). You will store this as `SLACK_BOT_TOKEN`.
 3. Click *Basic Information* from the left hand menu and follow the steps in the *App-Level Tokens* section to create an app-level token with the `connections:write scope`. Or if you already have one (starts with xapp-), copy this token and store it as `SLACK_APP_TOKEN`.
 4. Rename `env.example` to just `.env`
 
