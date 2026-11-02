@@ -3,7 +3,7 @@ Slack app that acts as a connector for Kibana - Development / Deployment Instruc
 
 ## Setup
 
-#### Create Your Slack App
+#### Create Your Slack App (If you don't have one)
 1. Open [https://api.slack.com/apps/new](https://api.slack.com/apps/new) and choose "From an app manifest"
 2. Choose the workspace you want to install the application to
 3. Copy the contents of [manifest.json](./manifest.json) into the text box that says `*Paste your manifest code here*` (within the JSON tab) and click *Next*
