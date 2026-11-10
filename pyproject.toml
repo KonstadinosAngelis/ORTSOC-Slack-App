@@ -7,6 +7,7 @@ dependencies = [
     "pytest==9.2.0",
     "ruff==0.17.3",
     "python-dotenv==1.2.4",
+    "elasticsearch>=8,<9",
 ]
 
 [project.optional-dependencies]
