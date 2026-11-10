@@ -28,7 +28,12 @@
                 "command": "/sample-command",
                 "description": "Runs a sample command",
                 "should_escape": false
-            }
+            },
+	    {
+	    	"command": "/elasticsearch_status",
+		"description": "Check slack -> elasticsearch client status",
+		"should_escape": false
+	    }
         ]
     },
     "oauth_config": {
