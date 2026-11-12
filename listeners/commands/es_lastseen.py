@@ -2,7 +2,7 @@ from logging import Logger
 
 from slack_bolt import Ack, Respond
 
-#Helper function: Takes elastic module input (such as zeek/suricata), grabs the latest log of that type, and returns an f-string to output
+#Helper function: Takes elastic module input (such as Zeek/Suricata), grabs the latest log of that type, and returns an f-string to output
 def last_log_helper(es, module):
     hits = es.search(
         index="logs-*",
@@ -20,7 +20,7 @@ def last_log_helper(es, module):
         f"```Last log seen at {src['@timestamp']}\nDataset: {src['event']['dataset']}"
     )
 
-#Helper function: Takes elastic module input, and returns the average number of logs generated over the last hour
+#Helper function: Takes elastic module input, and returns the average number of those logs generated over the last hour
 def avg_logs_per_min(es, module):
     count = es.count(
             index="logs-*",
