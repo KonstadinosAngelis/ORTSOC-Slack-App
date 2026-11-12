@@ -33,7 +33,12 @@
 	    	"command": "/es_event_count",
 		"description": "Returns the total of logs ingested in the last hour.",
 		"should_escape": false
-	    }
+	    },
+	    {
+                "command": "/es_health",
+                "description": "Checks cluster health",
+                "should_escape": false
+            }
         ]
     },
     "oauth_config": {
