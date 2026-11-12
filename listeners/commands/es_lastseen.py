@@ -28,10 +28,10 @@ def avg_logs_per_min(es, module):
                 "filter": [
                     {"term": {"event.module": module}},
                     {"range": {"@timestamp": {"gte": "now-1h"}}},
-                ]
-            }
-        },
-    )["count"]
+                    ]
+                }
+            },
+        )["count"]
     return count / 60
 
 
