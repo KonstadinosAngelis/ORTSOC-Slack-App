@@ -1,9 +1,9 @@
-import logging
-import os
-
 from slack_bolt import App
 from slack_bolt.adapter.socket_mode import SocketModeHandler
 from elastic_agent import create_es_client
+
+import logging
+import os
 
 from listeners import register_listeners
 

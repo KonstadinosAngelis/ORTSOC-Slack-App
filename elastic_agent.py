@@ -1,7 +1,7 @@
-# elastic_client.py
 import os
 from elasticsearch import Elasticsearch
 
+#Initializes an elastic search client that gets passed to all listeners through app.py
 def create_es_client() -> Elasticsearch:
     return Elasticsearch(
         os.environ["ELASTICSEARCH_URL"],
