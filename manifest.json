@@ -29,12 +29,11 @@
                 "description": "Checks cluster health",
                 "should_escape": false
             },
-	    {
-	    	"command": "/es_event_count",
-		"description": "Returns the total of logs ingested in the last hour.",
-		"should_escape": false
-	    },
-	    
+	          {
+	    	        "command": "/es_event_count",
+		            "description": "Returns the total of logs ingested in the last hour.",
+		            "should_escape": false
+	          },
             {
                 "command": "/es_lastseen",
                 "description": "Returns the timestamp, time ingested, agent name, and average logs per minute over the last hour for Zeek and Suricata.",
