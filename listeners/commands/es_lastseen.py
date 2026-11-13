@@ -2,6 +2,10 @@ from logging import Logger
 
 from slack_bolt import Ack, Respond
 
+from datetime import datetime
+from zoneinfo import ZoneInfo
+
+PACIFIC = ZoneInfo("America/Los_Angeles")
 
 # Helper function: Takes elastic module input (such as Zeek/Suricata), grabs the latest log of that type, and returns an f-string to output
 def last_log_helper(es, module):
@@ -16,7 +20,13 @@ def last_log_helper(es, module):
         return f"*{module}*: no logs found"
 
     src = hits[0]["_source"]
-    return f"*{module}* \n```Last log seen at {src['@timestamp']}\nDataset: {src['event']['dataset']}"
+    seen = datetime.fromisoformat(src["@timestamp"].replace("Z", "+00:00")).astimezone(PACIFIC)
+    ingested = datetime.fromisoformat(src['event']['ingested'].replace("Z", "+00:00")).astimezone(PACIFIC)
+    return (
+            f"*{module}* \n```Last log seen at {seen:%Y-%m-%d %H:%M:%S %Z}\n"
+            f"Ingested: {ingested:%Y-%m-%d %H:%M:%S %Z}\n"
+            f"Agent: {src['agent']['name']}"
+        )
 
 
 # Helper function: Takes elastic module input, and returns the average number of those logs generated over the last hour
